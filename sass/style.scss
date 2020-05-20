@@ -1,0 +1,1004 @@
+/* Scss Document */
+
+$breakpoint-sm: 374px;
+$breakpoint: 768px;
+$breakpoint-md: 960px;
+$txtcolor: #f0fff2;
+$black: #000009;
+
+
+@mixin sm {
+  @media screen and (max-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin mq {
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin mq-md {
+  @media screen and (max-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin height{
+	@media screen and (max-height: 800px){
+		@content;
+  }
+}
+
+//共通css
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a{
+	color: inherit;
+	&:hover{
+		opacity: 0.5 !important;
+		transition: 0.5s;
+	}
+}
+
+img{
+	max-width: 100%;
+	width: 100%;
+}
+
+html,body{
+	font-family: fot-cezanne-pron, "Hiragino Sans","ヒラギノ角ゴ Pro W3", "メイリオ", Meiryo, sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 62.5%; 
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+body{
+	font-size: 1.6rem;
+	font-weight: 300;
+	line-height: 1.75;
+	color: $txtcolor;
+	font-feature-settings : "palt";
+	animation: fadeIn 2s ease 0s 1 normal;
+    -webkit-animation: fadeIn 2s ease 0s 1 normal;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	@include mq{
+		font-size: 1.4rem;
+	}
+	&.add_overray{
+		overflow: hidden;
+	}
+}
+
+svg{fill: currentColor;}
+
+.sp{
+	display: none;
+	@include mq{
+		display: block !important;
+	}
+}
+
+.pc{
+	display: block;
+	@include mq{
+		display: none !important;
+	}
+}
+
+//セレクト
+::selection {
+    background: #FEFD32;
+}
+
+//フォント
+.worksans{
+	font-family: work-sans, fot-cezanne-pron, "Hiragino Sans","ヒラギノ角ゴ Pro W3", "メイリオ", Meiryo, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+//ローディング
+@-webkit-keyframes sk-scaleout {
+  0% { -webkit-transform: scale(0.7) }
+  100% {
+    -webkit-transform: scale(0.6);
+    opacity: 0;
+  }
+}
+
+@keyframes sk-scaleout {
+  0% { 
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+  } 100% {
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
+    opacity: 0;
+  }
+}
+
+#loader-bg{
+	background: #fff;
+	position: fixed;
+	z-index: 999999999;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+}
+
+.spinner {
+	width: 150px;
+	height: 150px;
+	content: url("../img/mi.svg");
+	-webkit-animation: sk-scaleout 4.0s infinite ease-in-out;
+	animation: sk-scaleout 4.0s infinite ease-in-out;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -75px 0 0 -75px;
+}
+
+//フェードイン
+@keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+.fadein {
+    opacity : 0;
+    transform : translate(0, 140px);
+    transition : all 1s;
+	@include mq{
+		transform : translate(0, 50px);
+	}
+}
+
+.fadein.scrollin {
+    opacity : 1;
+    transform : translate(0, 0);
+}
+
+
+#bg_dots{
+	background: url("../img/bg_dot.png");
+	width: 100vw;
+	height: 100vh;
+	z-index: 1;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+#bg_loop{
+	z-index: -2;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+}
+.loop_js {
+    display: -webkit-flex;
+    display: flex;
+    width: 3000px;
+    height: 100vh; 
+}
+@media screen and (max-width: 768px) {
+	.loop_js {
+		height: 100vh;
+		width: 1500px; 
+	} 
+}
+	.loop_js img {
+	width: auto !important;
+	max-width: inherit !important; 
+}
+	@media screen and (max-width: 768px) {
+	.loop_js img {
+		width: auto !important;
+		max-width: 100% !important; 
+		} 
+}
+	.loop_js > * {
+	height: auto; 
+}
+
+#icons{
+	display: flex;
+	flex-wrap: nowrap;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 999;
+	text-align: center;
+	li{
+		width: 80px;
+		height: 80px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: #000;
+		@include mq{
+			width: 65px;
+			height: 65px;
+		}
+		img{
+			width: 70%;
+		}
+		&:nth-child(1){
+			background: #DD4229;
+		}
+		&:nth-child(2){
+			background: #FFA0D9;
+		}
+		&:nth-child(3){
+			background: #00A0FD;
+		}
+		&:nth-child(4){
+			background: #e8be00;
+		}
+	}
+}
+
+//header
+nav#toggle{
+	height: 80px;
+	position: absolute;
+	z-index: 100000000;
+	top: 0;
+	left: 0;
+	width: 80px;
+	@include mq{
+		height: 40px;
+		width: 40px;
+	}
+}
+#nav-toggle {
+	position: absolute;
+	top: 24px;
+	left: 22px;
+	height: 32px;
+	cursor: pointer;
+	@include mq{
+		height: 20px;
+		left: -10px;
+		top: -10px;
+	}
+  > div {
+	position: relative;
+	width: 36px;
+	  @include mq{
+		  width: 30px;
+	  }
+  }
+  span {
+	width: 100%;
+	height: 1px;
+	left: 0;
+	display: block;
+	background: #fff;
+	position: absolute;
+	transition: transform .6s ease-in-out, top .5s ease;
+	&:nth-child(1) {
+	  top: 0;
+	}
+	&:nth-child(2) {
+	  top: 14px;
+		@include mq{
+			top: 10px;
+		}
+	}
+	&:nth-child(3) {
+	  top: 28px;
+		@include mq{
+			top: 20px;
+		}
+	}
+  }
+
+  &:hover span:nth-child(1) {
+	top: 4px;
+	  @include mq{
+		  top: 0;
+	  }
+  }
+  &:hover span:nth-child(3) {
+	top: 23px;
+	  @include mq{
+		  top: 20px;
+	  }
+  }
+
+}
+
+.open {
+  #nav-toggle span {
+	background: #fff;
+	&:nth-child(1) {
+	  top: 15px;
+	  transform: rotate(45deg);
+	}
+	&:nth-child(2) {
+	  top: 15px;
+	  width: 0;
+	  left: 50%;
+	}
+	&:nth-child(3) {
+	  top: 15px;
+	  transform: rotate(-45deg);
+	}
+  }
+}
+
+/* z-index */
+#nav-toggle {
+	z-index: 1000;
+}
+#container {
+	z-index: 900;
+}
+
+#gloval-nav {
+	background: rgba(0,0,0,0.8);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 990;
+	width: 100vw;
+	height: 100vh;
+	text-align: left;
+	display: flex;
+	visibility: hidden;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	transition: opacity .6s ease, visibility .6s ease;
+}
+
+
+#gloval-nav {
+  a {
+	display: block;
+	color: #FEFD32;
+	transition: color .6s ease;
+	font-size: 6rem;
+	text-decoration: none;
+	  font-weight: 700;
+	  @include mq{
+		  font-size: 3rem;
+	  }
+	&:hover {
+	  color: #666;
+	}
+  }
+  ul {
+	list-style: none;
+	  width: 100%;
+	li {
+	  opacity: 0;
+	  transform: translateX(200px);
+	  transition:  transform .6s ease, opacity .2s ease;
+	padding: 15px 0 15px;
+		 &:first-child{
+		  padding: 0 0 15px;
+	  }
+	  &:nth-child(2) {
+		transition-delay: .15s;
+	  }
+	  &:nth-child(3) {
+		transition-delay: .3s;
+	  }
+		&:nth-child(4) {
+		transition-delay: .45s;
+	  }
+		&:nth-child(5) {
+		transition-delay: .6s;
+	  }
+		&:nth-child(6) {
+		transition-delay: .75s;
+	  }
+	}
+  }
+} 
+
+/* open */
+.open {
+	/*overflow: hidden;*/
+
+  #gloval-nav {
+	visibility: visible;
+	opacity: 1;
+  }
+
+  #gloval-nav li {
+	opacity: 1;
+	transform: translateX(0);
+	transition:  transform 1s ease, opacity .9s ease;
+  }
+}
+
+header{
+	position: fixed;
+	height: 80px;
+	z-index: 999999999;
+	width: 80px;
+	top: 50%;
+	-moz-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translate(0,-50%); /*位置調整*/
+	right: 0;
+	@include mq{
+		height: 40px;
+		width: 40px;
+	}
+}
+
+.content{
+	position: relative;
+	z-index: 2;
+}
+
+//震える
+@keyframes hurueru {
+    0% {transform: translate(0px, 0px) rotateZ(0deg)}
+    25% {transform: translate(2px, 2px) rotateZ(1deg)}
+    50% {transform: translate(0px, 2px) rotateZ(0deg)}
+    75% {transform: translate(2px, 0px) rotateZ(-1deg)}
+    100% {transform: translate(0px, 0px) rotateZ(0deg)}
+}
+
+#intro{
+	height: 100vh;
+	background: $black;
+	@include mq{
+		padding: 150px 0;
+		height: auto;
+	}
+	.content{
+		width: 60%;
+		margin: 0 auto;
+		position: relative;
+		top: 50%;
+		transform: translate(0,-50%);
+		@include mq{
+			width: 88%;
+			top: auto;
+			transform: inherit;
+		}
+		@include mq-md{
+			width: 80%;
+		}
+		h1{
+			font-size: 10rem;
+			line-height: 1.05;
+			font-weight: 900;
+			display: inline;
+			&:hover{
+				animation: hurueru .1s  infinite;
+				display: block;
+			}
+			@include height{
+				font-size: 7rem;
+			}
+			
+			@include mq-md{
+				font-size: 7.5rem;
+				line-height: 1.25;
+				transform: none;
+			}
+			@include mq{
+				font-size: 4rem;
+				line-height: 1.25;
+				transform: none;
+			}
+		}
+	}
+}
+
+#news{
+	padding: 120px 0 120px;
+	background: $txtcolor;
+	color: $black;
+	width: 60%;
+	@include mq-md{
+		width: 80%;
+	}
+	@include mq{
+		width: 94%;
+		padding: 60px 0;
+		margin: 30px 0;
+	}
+	.content{
+		width: 88%;
+		margin: 0 auto;
+		@include mq{
+			width: 80%;
+		}
+		h2{
+			font-size: 6rem;
+			margin-bottom: 45px;
+			font-weight: 700;
+			line-height: 1;
+			padding-left: 6%;
+			@include mq{
+				font-size: 4rem;
+				margin-bottom: 30px;
+				padding-left: 0;
+			}
+		}
+		ul{
+			li{
+				width: 94%;
+				margin: 0 0 0 6%;
+				padding: 20px 30px;
+				border-bottom: 1px solid #666;
+				@include mq{
+					width: 100%;
+					margin: 0 auto;
+					padding: 20px 15px;
+				}
+				@include mq-md{
+					margin: 0 auto;
+					width: 100%;
+				}
+				&:nth-child(1){
+					border-top: 1px solid #666;
+				}
+				dl{
+					display: flex;
+					flex-wrap: nowrap;
+					@include mq{
+						display: block;
+					}
+					dt{
+						font-size: 1.4rem;
+						margin-right: 30px;
+						@include mq{
+							width: 100%;
+							margin-bottom: 2px;
+						}
+					}
+					dd{
+						font-weight: 600;
+					}
+				}
+				a{
+					display: block;
+				}
+			}
+		}
+	}
+		.linkbox{
+			padding: 20px;
+			text-align: center;
+			display: block;
+			width: 30%;
+			margin: 40px auto 0;
+			font-weight: 600;
+			@include mq{
+				width: 100%;
+			}
+		}
+}
+
+#news_low{
+	padding: 200px 0 120px;
+	background: $black;
+	color: $txtcolor;
+	width: 94%;
+	margin: 60px 6% 60px 0;
+	@include mq{
+		padding: 120px 0;
+		width: 100%;
+		margin: 60px auto;
+	}
+	.content{
+		width: 88%;
+		margin: 0 auto;
+		max-width: 900px;
+		@include mq{
+			width: 80%;
+		}
+		h2{
+			font-size: 6rem;
+			margin-bottom: 45px;
+			font-weight: 700;
+			line-height: 1;
+			@include mq{
+				font-size: 4rem;
+				margin-bottom: 30px;
+			}
+		}
+		#news_detail{
+			h3{
+				font-size: 3rem;
+				margin-bottom: 20px;
+				@include mq{
+					font-size: 2.4rem
+				}
+			}
+			p{
+				line-height: 2;
+				margin-bottom: 15px;
+				&.news_day{
+					font-size: 1.2rem;
+					margin-bottom: 30px;
+					padding-bottom: 20px;
+					border-bottom: 1px dotted $txtcolor;
+					text-align: right;
+				}
+			}
+		}
+		.maplink{
+			display: block;
+			padding: 20px;
+			width: 30%;
+			text-align: center;
+			border: 1px solid $txtcolor;
+			color: $txtcolor;
+			margin-top: 40px;
+			margin-bottom: 40px;
+			@include mq{
+				width: 100%;
+			}
+		}
+	}
+}
+
+#schedule{
+	padding: 120px 0 120px;
+	background: #DD4229;
+	color: $black;
+	width: 100%;
+	margin: 60px auto;
+	@include mq{
+		padding: 60px 0;
+		margin: 0 auto;
+	}
+	.content{
+		width: 88%;
+		margin: 0 auto;
+		@include mq{
+			width: 80%;
+		}
+		h2{
+			font-size: 6rem;
+			margin-bottom: 45px;
+			font-weight: 700;
+			line-height: 1;
+			@include mq{
+				font-size: 4rem;
+				margin-bottom: 30px;
+			}
+		}
+		.schedule_box{
+			border-bottom: 1px solid $black;
+			padding: 20px 30px;
+			display: block;
+			@include mq{
+				padding: 15px 0;
+				border-top: 1px solid $black;
+			}
+			ul{
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				align-items: center;
+				@include mq{
+					display: block;
+				}
+				li{
+					font-size: 2rem;
+					font-weight: bold;
+					line-height: 1.25;
+					&:nth-child(1){
+						width: 100%;
+						margin-bottom: 5px;
+						font-size: 2.8rem;
+						@include mq{
+							font-size: 2.4rem;
+						}
+					}
+					&:nth-child(2){
+						width: 15%;
+						@include mq{
+						position: relative;
+							&::before{
+								content: "Day";
+								margin-right: 10px;
+								font-size: 1.2rem;
+								font-family: work-sans, fot-cezanne-pron, "Hiragino Sans","ヒラギノ角ゴ Pro W3", "メイリオ", Meiryo, sans-serif;
+								font-weight: 300;
+								font-style: normal;
+							}
+						}
+					}
+					&:nth-child(3){
+						width: 15%;
+						@include mq{
+						position: relative;
+							&::before{
+								content: "Time";
+								margin-right: 10px;
+								font-size: 1.2rem;
+								font-family: work-sans, fot-cezanne-pron, "Hiragino Sans","ヒラギノ角ゴ Pro W3", "メイリオ", Meiryo, sans-serif;
+								font-weight: 300;
+								font-style: normal;
+							}
+						}
+					}
+					&:nth-child(4){
+						width: 20%;
+						@include mq{
+						position: relative;
+							&::before{
+								content: "Charge";
+								margin-right: 10px;
+								font-size: 1.2rem;
+								font-family: work-sans, fot-cezanne-pron, "Hiragino Sans","ヒラギノ角ゴ Pro W3", "メイリオ", Meiryo, sans-serif;
+								font-weight: 300;
+								font-style: normal;
+							}
+						}
+					}
+					&:nth-child(5){
+						width: 40%;
+						font-size: 2.2rem;
+						@include mq{
+						position: relative;
+							&::before{
+								content: "Act";
+								margin-right: 10px;
+								font-size: 1.2rem;
+								font-family: work-sans, fot-cezanne-pron, "Hiragino Sans","ヒラギノ角ゴ Pro W3", "メイリオ", Meiryo, sans-serif;
+								font-weight: 300;
+								font-style: normal;
+							}
+						}
+					}
+					@include mq{
+						width: 100% !important;
+						margin-bottom: 4px;
+						font-size: 1.6rem;
+						line-height: 1.5;
+					}
+				}
+			}
+		}
+	}
+		.linkbox{
+			padding: 20px;
+			text-align: center;
+			display: block;
+			width: 30%;
+			margin: 40px auto 0;
+			font-weight: 600;
+			@include mq{
+				width: 100%;
+			}
+		}
+}
+#schedule_low{
+	padding: 200px 0 120px;
+	background: #DD4229;
+	color: $black;
+	width: 94%;
+	margin: 60px 6% 60px 0;
+	@include mq{
+		padding: 120px 0;
+		width: 100%;
+		margin: 60px auto;
+	}
+	.content{
+		width: 88%;
+		margin: 0 auto;
+		max-width: 900px;
+		@include mq{
+			width: 80%;
+		}
+		h2{
+			font-size: 6rem;
+			margin-bottom: 45px;
+			font-weight: 700;
+			line-height: 1;
+			@include mq{
+				font-size: 4rem;
+				margin-bottom: 30px;
+			}
+		}
+		#schedule_detail{
+			img{
+				height: auto !important;
+			}
+			ul{
+				margin-bottom: 30px;
+				li{
+					padding: 20px 15px;
+					border-bottom: 1px solid $black;
+					font-size: 2rem;
+					font-weight: 700;
+					span{
+						font-weight: 300;
+						margin-right: 15px;
+						font-size: 1.4rem;
+					}
+					@include mq{
+						font-size: 1.7rem;
+					}
+				}
+			}
+			p{
+				line-height: 1.75;
+				margin-bottom: 10px;
+			}
+		}
+		.maplink{
+			display: block;
+			padding: 20px;
+			width: 30%;
+			text-align: center;
+			border: 1px solid $black;
+			color: $black;
+			margin-top: 40px;
+			margin-bottom: 40px;
+			@include mq{
+				width: 100%;
+			}
+		}
+	}
+}
+
+
+#info{
+	padding: 120px 0 120px;
+	background: rgba(0,0,10,0.8);
+	color: $txtcolor;
+	width: 88%;
+	margin: 60px auto 0;
+	z-index: 3;
+	position: relative;
+	@include mq{
+		padding: 60px 0;
+		margin: 30px auto 0;
+	}
+	.content{
+		width: 88%;
+		margin: 0 auto;
+		@include mq{
+			width: 80%;
+		}
+		h2{
+			font-size: 6rem;
+			margin-bottom: 45px;
+			font-weight: 700;
+			line-height: 1;
+			@include mq{
+				font-size: 4rem;
+				margin-bottom: 30px;
+			}
+		}
+		h3{
+			font-size: 3rem;
+			margin-bottom: 30px;
+			font-weight: 700;
+			margin-top: 40px;
+			@include mq{
+				font-size: 2.4rem;
+			}
+		}
+		h4{
+			font-size: 1.8rem;
+			font-weight: 300;
+			@include mq{
+				font-size: 1.6rem;
+			}
+		}
+		p{
+			margin-bottom: 15px;
+			&.worksans{
+				font-weight: 600;
+			}
+		}
+		.maplink{
+			display: block;
+			padding: 20px;
+			width: 30%;
+			text-align: center;
+			border: 1px solid $txtcolor;
+			margin-top: 40px;
+			margin-bottom: 40px;
+			@include mq{
+				width: 100%;
+			}
+		}
+	}
+}
+#info_img{
+	background: rgba(0,0,10,0.8);
+	color: $txtcolor;
+	width: 40%;
+	z-index: 3;
+	position: relative;
+	margin: -120px 0 0 54%;
+	@include mq{
+		margin: 0 auto 30px;
+		width: 88%;
+	}
+}
+
+#sis{
+	background: #FFF530;
+	padding: 120px 0 120px;
+	color: $black;
+	width: 94%;
+	margin: 60px 6% 60px 0;
+	@include mq{
+		width: 100%;
+		padding: 60px 0;
+		margin: 30px auto 60px;
+	}
+	.content{
+		width: 88%;
+		margin: 0 auto;
+		h2{
+			font-size: 6rem;
+			margin-bottom: 45px;
+			font-weight: 700;
+			line-height: 1;
+			@include mq{
+				font-size: 4rem;
+				margin-bottom: 30px;
+			}
+		}
+		h3{
+			font-size: 2rem;
+			font-weight: 600;
+			margin-bottom: 20px;
+		}
+		.maplink{
+			display: block;
+			padding: 20px;
+			width: 30%;
+			text-align: center;
+			border: 1px solid $black;
+			margin-top: 40px;
+			margin-bottom: 40px;
+			@include mq{
+				width: 100%;
+			}
+		}
+	}
+}
+
+footer{
+	padding: 60px 6% 120px;
+	text-align: left;
+	width: 88%;
+	margin: 0 0 0 12%;
+	font-size: 1rem;
+	color: $black;
+	background: $txtcolor;
+	@include mq{
+		width: 100%;
+		margin: 0 auto;
+	}
+}
