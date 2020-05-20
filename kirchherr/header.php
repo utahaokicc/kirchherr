@@ -16,14 +16,26 @@
 <meta name="description" content="浜松市田町のライブハウスKIRCHHERRの公式サイト。公演スケジュール、イベント情報などをご覧いただけます。" />
 	
 <meta property="og:title" content="KIRCHHERR" />
+<?php if ( is_home() || is_front_page() ) : ?>
 <meta property="og:type" content="website" />
+<?php else : ?>
+<meta property="og:type" content="article" />
+<?php endif; ?>
 <meta property="og:url" content="https://kirchherr.xyz/" />
-<meta property="og:image" content="https://kirchherr.xyz/img/ogp.jpg" />
+<?php if ( is_single() && has_post_thumbnail() ) : ?>
+    <meta property="og:image" content="<?php echo home_url() . delete_domain_from_url(wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )[0]); ?>">
+<?php else : ?>
+    <meta property="og:image" content="<?php echo home_url() ?>/img/ogp.jpg">
+<?php endif; ?>
 <meta property="og:site_name" content="KIRCHHERR" />
 <meta property="og:description" content="浜松市田町のライブハウスKIRCHHERRの公式サイト。公演スケジュール、イベント情報などをご覧いただけます。" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:description" content="浜松市田町のライブハウスKIRCHHERRの公式サイト。公演スケジュール、イベント情報などをご覧いただけます。" />
-<meta itemprop="image" content="https://kirchherr.xyz/img/ogp.jpg" />
+<?php if ( is_single() && has_post_thumbnail() ) : ?>
+    <meta itemprop="image" content="<?php echo home_url() . delete_domain_from_url(wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )[0]); ?>">
+<?php else : ?>
+    <meta itemprop="image" content="<?php echo home_url() ?>/img/ogp.jpg" />
+<?php endif; ?>
 
 <link rel="apple-touch-icon" href="<?php echo home_url("/"); ?>img/fav.png">
 <link rel="shortcut icon" href="<?php echo home_url("/"); ?>img/favicon.ico">

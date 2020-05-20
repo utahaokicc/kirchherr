@@ -72,3 +72,11 @@ $sql .= 'SET post_status = "publish" ';
 $sql .= 'WHERE post_status = "future"';
 $wpdb->get_results($sql);
 }
+
+// URLからドメイン部分を削除したURLを返す
+function delete_domain_from_url( $url ) {
+    if ( preg_match( '/^http(s)?:\/\/[^\/\s]+(.*)$/', $url, $match ) ) {
+        $url = $match[2];
+    }
+    return $url;
+}
