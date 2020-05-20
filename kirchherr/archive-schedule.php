@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 	<section id="schedule" class="schedule_arc">
-		<div class="content fadein">
+		<div class="content">
 			<h2 class="worksans">KIRCHHERR <br class="sp">Schedule</h2>
 			<div class="schedule_box pc">
 				<ul class="worksans">
