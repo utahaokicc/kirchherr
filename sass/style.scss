@@ -151,17 +151,17 @@ svg{fill: currentColor;}
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	margin: - 150px 0 0 -150px;
+	margin: -150px 0 0 -150px;
 	@include mq{
-		width: 150px;
-		height: 150px;
+		width:  300px;
+		height: 300px;
 		content: url("../img/mi.svg");
 		-webkit-animation: sk-scaleout 4.0s infinite ease-in-out;
 		animation: sk-scaleout 4.0s infinite ease-in-out;
 		position: absolute;
 		left: 50%;
 		top: 50%;
-		margin: -75px 0 0 -75px;
+		margin: -150px 0 0 -150px;
 	}
 }
 
