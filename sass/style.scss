@@ -797,14 +797,17 @@ header{
 		}
 	}
 		.linkbox{
-			padding: 20px;
-			text-align: center;
-			display: block;
-			width: 30%;
-			margin: 40px auto 0;
+			text-align: left;
+			display: inline-block;
+			margin: 20px;
 			font-weight: 600;
+			border-bottom: 1px dashed $black;
+			padding-bottom: 3px;
 			@include mq{
+				display: block;
 				width: 100%;
+				text-align: center;
+				margin: 20px auto;
 			}
 		}
 }

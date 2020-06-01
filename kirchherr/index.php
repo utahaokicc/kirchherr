@@ -70,7 +70,10 @@
 			<?php endwhile; ?>
 			<?php wp_reset_postdata(); ?>
 			<a href="<?php echo home_url("/"); ?>schedule/" class="linkbox worksans">
-				View All
+				View Newest Schedule
+			</a>
+			<a href="<?php echo home_url("/"); ?>past_schedule/" class="linkbox worksans">
+				View Past Schedule
 			</a>
 		</div>
 	</section>

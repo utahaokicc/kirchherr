@@ -648,15 +648,18 @@ header {
               font-size: 1.6rem;
               line-height: 1.5; } }
   #schedule .linkbox {
-    padding: 20px;
-    text-align: center;
-    display: block;
-    width: 30%;
-    margin: 40px auto 0;
-    font-weight: 600; }
+    text-align: left;
+    display: inline-block;
+    margin: 20px;
+    font-weight: 600;
+    border-bottom: 1px dashed #000009;
+    padding-bottom: 3px; }
     @media screen and (max-width: 768px) {
       #schedule .linkbox {
-        width: 100%; } }
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 20px auto; } }
 
 #schedule_low {
   padding: 200px 0 120px;
