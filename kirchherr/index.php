@@ -107,7 +107,7 @@
 	<section id="sis">
 		<div class="content fadein">
 			<h2 class="worksans">SISTER STORE</h2><h3>浜松シーシャ キルヒヘア</h3>
-			<p>浜松市中区田町カギヤビル地下にて営業しておりました。新店舗6月オープン予定。<br>
+			<p>浜松市中区田町カギヤビル地下にて営業しておりました。新店舗7月くらいにオープン予定。<br>
 				現在中区萩丘ROBA NO MIMI様のシーシャスペースを間借りして営業中。月曜定休です。<br>
 				平日17:00-土日祝12:00- LastOrder22:30 シーシャ¥1,500~ワンドリンク制¥500~</p>
 			<a href="https://twitter.com/KIRCH_Shisha" target="_blank" class="maplink worksans">Twitter</a>
