@@ -880,6 +880,84 @@ header{
 		}
 	}
 }
+#count_low{
+	padding: 200px 0 120px;
+	background: #DD4229;
+	color: $black;
+	width: 94%;
+	margin: 60px 6% 60px 0;
+	@include mq{
+		padding: 60px 0;
+		width: 100%;
+		margin: 30px auto;
+	}
+	.content{
+		width: 88%;
+		margin: 0 auto;
+		max-width: 900px;
+		text-align: center;
+		@include mq{
+			width: 80%;
+		}
+		h2{
+			font-size: 6rem;
+			margin-bottom: 45px;
+			font-weight: 700;
+			line-height: 1;
+			@include mq{
+				font-size: 4rem;
+				margin-bottom: 30px;
+			}
+		}
+		#count_detail{
+			ul{
+				margin-bottom: 30px;
+				li{
+					padding: 30px 15px 20px;
+					border-bottom: 1px solid $black;
+					font-size: 4rem;
+					font-weight: 700;
+					span{
+						font-weight: 300;
+						margin-right: 15px;
+						font-size: 1.4rem;
+					}
+					@include mq{
+						font-size: 1.7rem;
+					}
+					h3{
+						font-size: 3rem;
+						line-height: 1;
+						margin-bottom: 1px;
+					}
+					p{
+						line-height: 1;
+						span{
+							font-size: 10rem;
+							font-weight: 700;
+						}
+					}
+				}
+			}
+			p{
+				line-height: 1.75;
+				margin-bottom: 10px;
+			}
+		}
+		.maplink{
+			display: block;
+			padding: 20px;
+			width: 30%;
+			text-align: center;
+			border: 1px solid $black;
+			color: $black;
+			margin: 40px auto;
+			@include mq{
+				width: 100%;
+			}
+		}
+	}
+}
 
 
 #info{

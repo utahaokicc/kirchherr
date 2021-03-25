@@ -720,6 +720,72 @@ header {
         #schedule_low .content .maplink {
           width: 100%; } }
 
+#count_low {
+  padding: 200px 0 120px;
+  background: #DD4229;
+  color: #000009;
+  width: 94%;
+  margin: 60px 6% 60px 0; }
+  @media screen and (max-width: 768px) {
+    #count_low {
+      padding: 60px 0;
+      width: 100%;
+      margin: 30px auto; } }
+  #count_low .content {
+    width: 88%;
+    margin: 0 auto;
+    max-width: 900px;
+    text-align: center; }
+    @media screen and (max-width: 768px) {
+      #count_low .content {
+        width: 80%; } }
+    #count_low .content h2 {
+      font-size: 6rem;
+      margin-bottom: 45px;
+      font-weight: 700;
+      line-height: 1; }
+      @media screen and (max-width: 768px) {
+        #count_low .content h2 {
+          font-size: 4rem;
+          margin-bottom: 30px; } }
+    #count_low .content #count_detail ul {
+      margin-bottom: 30px; }
+      #count_low .content #count_detail ul li {
+        padding: 30px 15px 20px;
+        border-bottom: 1px solid #000009;
+        font-size: 4rem;
+        font-weight: 700; }
+        #count_low .content #count_detail ul li span {
+          font-weight: 300;
+          margin-right: 15px;
+          font-size: 1.4rem; }
+        @media screen and (max-width: 768px) {
+          #count_low .content #count_detail ul li {
+            font-size: 1.7rem; } }
+        #count_low .content #count_detail ul li h3 {
+          font-size: 3rem;
+          line-height: 1;
+          margin-bottom: 1px; }
+        #count_low .content #count_detail ul li p {
+          line-height: 1; }
+          #count_low .content #count_detail ul li p span {
+            font-size: 10rem;
+            font-weight: 700; }
+    #count_low .content #count_detail p {
+      line-height: 1.75;
+      margin-bottom: 10px; }
+    #count_low .content .maplink {
+      display: block;
+      padding: 20px;
+      width: 30%;
+      text-align: center;
+      border: 1px solid #000009;
+      color: #000009;
+      margin: 40px auto; }
+      @media screen and (max-width: 768px) {
+        #count_low .content .maplink {
+          width: 100%; } }
+
 #info {
   padding: 120px 0 120px;
   background: rgba(0, 0, 10, 0.8);
